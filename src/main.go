@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-struct-data/栈"
+	"go-struct-data/树"
 	"go-struct-data/线性表"
 	"go-struct-data/队列"
 	"math/rand"
@@ -153,7 +154,33 @@ func main() {
 	fmt.Println("hello world!")
 	//testList()
 	//testNodeList()
-	testKMP()
+	testNodeTree()
+}
+
+func testNodeTree() {
+	var test 树.NodeTree
+	arr := []int{8, 1, 2, 3, 0, 5, 6, 0}
+	test.ListTreeToNodeTree(arr)
+	test.PreVisit()
+	test.PreVisitRecursion()
+	fmt.Println("--pre--")
+	test.MidVisit()
+	test.MidVisitRecursion()
+	fmt.Println("--min--")
+	test.PostVisitRecursion()
+	fmt.Println("--post--")
+	test.LevelVisit()
+}
+
+func testBiTree() {
+	var test 树.BiTreeList
+	arr := [11]int{1, 2, 3, 4, 0, 0, 7}
+	test.CopyArrayToTree(arr[:])
+	test.TreePrint("3")
+	test.PreVisit()
+	test.MidVisit()
+	test.PostVisit()
+	test.LevelVisit()
 }
 
 func testKMP() {
